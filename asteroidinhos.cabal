@@ -1,0 +1,26 @@
+cabal-version:      3.0
+name:               asteroidinhos
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Amadeus Dabela Lanoa
+maintainer:         amadeus.arjuna@gmail.com
+category:           Game
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    hs-source-dirs:   src
+    exposed-modules:  Game.Core, Game.Render, Game.State, Game.Update, Game.Events, Media.Pictures
+    build-depends:    base >=4.17.2.0, gloss==1.13.2.2
+    default-language: Haskell2010
+
+executable asteroidinhos
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base >=4.17.2.0, gloss==1.13.2.2, asteroidinhos
+    hs-source-dirs:   app
+    default-language: Haskell2010
